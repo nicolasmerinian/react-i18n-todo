@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+import { useTranslation } from 'react-i18next';
+import Todolist from './components/Todolist';
+import LanguageButton from './components/LanguageButton';
+import lngs from './languages.js';
 import './App.css';
 
 function App() {
+  const { t } = useTranslation();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <div className='App'>
+        <header className='App-header'>
+          <p>{t('header')}</p>
+          <div>
+            { Object.keys(lngs).map((lng) => (
+              <LanguageButton lng= {lng }/>
+            ))}
+          </div>
+        </header>
+        <Todolist />
+      </div>
+  )
 }
 
 export default App;

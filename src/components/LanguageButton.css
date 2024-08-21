@@ -1,0 +1,8 @@
+.LanguageButton {
+    color: #AAA;
+    cursor: pointer;
+}
+
+.LanguageButton.language-selected {
+    color: white;
+}
